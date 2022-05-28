@@ -11,7 +11,7 @@ html {
 
 body {
   font: 400 1.6rem $fontBody;
-  background-color: $white;
+  background-color: $brand-green-light-02;
   -webkit-font-smoothing: antialiased;
   &.overflow {
     overflow: hidden;
@@ -50,7 +50,8 @@ img {
 }
 
 .container__section {
-  padding-block: 10rem;
+  padding-top: 10rem;
+  text-align: center;
 }
 
 .button {
@@ -87,4 +88,16 @@ img {
 
 .margin-inline {
   margin-inline: auto;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: $brand-green;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 6rem;
 }

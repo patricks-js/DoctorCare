@@ -11,7 +11,7 @@ html {
 
 body {
   font: 400 1.6rem "DM Sans", sans-serif;
-  background-color: whitesmoke;
+  background-color: #f7f9f9;
   -webkit-font-smoothing: antialiased;
 }
 body.overflow {
@@ -50,7 +50,8 @@ img {
 }
 
 .container__section {
-  padding-block: 10rem;
+  padding-top: 10rem;
+  text-align: center;
 }
 
 .button {
@@ -87,6 +88,18 @@ img {
 
 .margin-inline {
   margin-inline: auto;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #00856f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 6rem;
 }
 
 #header {
@@ -195,26 +208,21 @@ img {
   color: whitesmoke;
 }
 
-#main .section .container__section {
-  text-align: center;
+#main .section .section1 {
   position: relative;
 }
-#main .section .container__section h4 {
-  font-size: 1.4rem;
-  color: #00856f;
-}
-#main .section .container__section h1 {
+#main .section .section1 h1.title {
   font-size: 3.4rem;
 }
-#main .section .container__section p {
+#main .section .section1 p {
   font-size: 1.8rem;
 }
-#main .section .container__section .mulher-sorrindo {
+#main .section .section1 .mulher-sorrindo {
   max-width: 26.4rem;
   display: block;
   object-position: 0 2rem;
 }
-#main .section .container__section .stats {
+#main .section .section1 .stats {
   width: 100%;
   max-width: 37rem;
   background-color: #fffaf1;
@@ -223,13 +231,13 @@ img {
   gap: 6rem;
   border-radius: 0.6rem;
 }
-#main .section .container__section .stats .stat h3 {
+#main .section .section1 .stats .stat h3 {
   font-size: 4.8rem;
 }
-#main .section .container__section .stats .stat p {
+#main .section .section1 .stats .stat p {
   color: #00856f;
 }
-#main .section .container__section::before {
+#main .section .section1::before {
   content: "";
   width: 100%;
   height: 77%;
@@ -240,8 +248,73 @@ img {
   left: 0;
   z-index: -1;
 }
-#main .section .container__section2 {
-  text-align: center;
+#main .section .section2 .cards__services {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+#main .section .section2 .cards__services .service {
+  flex: 1 1 32.7rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  text-align: left;
+  padding: 2.4rem;
+}
+#main .section .section2 .cards__services .service .service__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+#main .section .section3 {
+  background-color: #fffaf1;
+  padding-bottom: 4rem;
+  text-align: left;
+}
+#main .section .section3 p {
+  margin-bottom: 4rem;
+}
+#main .section .section3 img {
+  max-width: 32.7rem;
+  display: block;
+}
+#main .section .section4 {
+  padding-bottom: 10rem;
+}
+#main .section .section4 .content {
+  gap: 3.5rem;
+}
+#main .section .section4 .content address,
+#main .section .section4 .content .mail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#main .section .section4 .content img {
+  max-width: 32.7rem;
+  display: block;
+}
+
+#footer {
+  background-color: #00856f;
+  padding-block: 6rem;
+}
+#footer .container .logo a {
+  color: whitesmoke;
+  font-size: 3.6rem;
+}
+#footer .container .logo a span {
+  font-weight: 700;
+}
+#footer .container p {
+  color: whitesmoke;
+}
+#footer .container .social-media {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
