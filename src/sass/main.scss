@@ -1,14 +1,14 @@
 #header {
   width: 100%;
   height: 7.2rem;
+  background-color: $brand-green-light;
+  transition: background 0.3s;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-
-  &.background {
-    background-color: $brand-green;
-  }
+  overflow: hidden;
   .container {
     display: flex;
     align-items: center;
@@ -18,6 +18,44 @@
       font-size: 2.4rem;
       span {
         color: $brand-green;
+        font-weight: 700;
+      }
+    }
+    .menu-btn {
+      position: relative;
+      .icon {
+        width: 4rem;
+      }
+      .close {
+        position: absolute;
+        right: 0;
+        transform: translateY(-5rem);
+        transition: all 0.3s;
+      }
+      .open {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      &.show {
+        .close {
+          transform: translateY(0);
+        }
+        .open {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &.background {
+    background-color: $brand-green;
+    .container {
+      .logo a {
+        color: $white;
+        span {
+          color: $white;
+        }
       }
     }
   }
