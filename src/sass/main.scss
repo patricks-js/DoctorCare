@@ -1,0 +1,89 @@
+#header {
+  width: 100%;
+  height: 7.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &.background {
+    background-color: $brand-green;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo a {
+      color: #000000;
+      font-size: 2.4rem;
+      span {
+        color: $brand-green;
+      }
+    }
+  }
+}
+
+#main {
+  .section {
+    .container__section {
+      text-align: center;
+      position: relative;
+      h4 {
+        font-size: 1.4rem;
+        color: $brand-green;
+      }
+      h1 {
+        font-size: 3.4rem;
+      }
+      p {
+        font-size: 1.8rem;
+      }
+      .mulher-sorrindo {
+        max-width: 26.4rem;
+        display: block;
+        object-position: 0 2rem;
+      }
+      .stats {
+        width: 100%;
+        max-width: 37rem;
+        background-color: $brand-beige;
+        padding-block: 4rem;
+
+        display: grid;
+        gap: 6rem;
+
+        border-radius: 0.6rem;
+        .stat {
+          h3 {
+            font-size: 4.8rem;
+          }
+          p {
+            color: $brand-green;
+          }
+        }
+      }
+      &::before {
+        content: "";
+        width: 100%;
+        height: 77%;
+        background-color: $brand-green-light;
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    .container__section2 {
+      text-align: center;
+    }
+    .container__section3 {
+    }
+    .container__section4 {
+    }
+  }
+}
+
+#footer {
+}

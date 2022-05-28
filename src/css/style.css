@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font: 400 1.6rem "DM Sans", sans-serif;
+  background-color: whitesmoke;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  color: #484f56;
+  line-height: 150%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: 6%;
+}
+
+.container__section {
+  padding-block: 10rem;
+}
+
+.button {
+  padding: 1.7rem 3.2rem;
+  border-radius: 4rem;
+  background-color: #00856f;
+  border: none;
+  font: 700 1.4rem "DM Sans", sans-serif;
+  color: whitesmoke;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.button:hover {
+  background-color: #004539;
+}
+
+.shadow {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
+}
+
+.gap {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.icon {
+  width: 2.4rem;
+}
+
+.margin-inline {
+  margin-inline: auto;
+}
+
+#header {
+  width: 100%;
+  height: 7.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#header.background {
+  background-color: #00856f;
+}
+#header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .container .logo a {
+  color: #000000;
+  font-size: 2.4rem;
+}
+#header .container .logo a span {
+  color: #00856f;
+}
+
+#main .section .container__section {
+  text-align: center;
+  position: relative;
+}
+#main .section .container__section h4 {
+  font-size: 1.4rem;
+  color: #00856f;
+}
+#main .section .container__section h1 {
+  font-size: 3.4rem;
+}
+#main .section .container__section p {
+  font-size: 1.8rem;
+}
+#main .section .container__section .mulher-sorrindo {
+  max-width: 26.4rem;
+  display: block;
+  object-position: 0 2rem;
+}
+#main .section .container__section .stats {
+  width: 100%;
+  max-width: 37rem;
+  background-color: #fffaf1;
+  padding-block: 4rem;
+  display: grid;
+  gap: 6rem;
+  border-radius: 0.6rem;
+}
+#main .section .container__section .stats .stat h3 {
+  font-size: 4.8rem;
+}
+#main .section .container__section .stats .stat p {
+  color: #00856f;
+}
+#main .section .container__section::before {
+  content: "";
+  width: 100%;
+  height: 77%;
+  background-color: #dce9e2;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#main .section .container__section2 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
