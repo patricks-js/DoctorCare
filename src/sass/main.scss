@@ -1,24 +1,66 @@
 #header {
   width: 100%;
-  height: 7.2rem;
+  height: $header-height;
   background-color: $brand-green-light;
   transition: background 0.3s;
 
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
-  overflow: hidden;
+  z-index: 3;
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     .logo a {
       color: #000000;
       font-size: 2.4rem;
       span {
         color: $brand-green;
         font-weight: 700;
+      }
+    }
+    #nav {
+      width: 100%;
+      height: 100vh;
+      background-color: $brand-green;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.4rem;
+
+      position: absolute;
+      top: $header-height;
+      left: 0;
+      z-index: 2;
+
+      transform: translateY(120%);
+      transition: 0.3s;
+      .menu {
+        margin-top: 2.4rem;
+        gap: 3.5rem;
+        li {
+          text-align: center;
+          a {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: $white;
+          }
+        }
+      }
+      .button {
+        margin-top: 1.1rem;
+        background-color: $white;
+        color: $brand-green;
+      }
+      .social-media {
+        display: flex;
+      }
+      &.show {
+        transform: translateY(0);
+        overflow: hidden;
       }
     }
     .menu-btn {
@@ -49,6 +91,17 @@
     }
   }
   &.background {
+    background-color: $brand-green;
+    .container {
+      .logo a {
+        color: $white;
+        span {
+          color: $white;
+        }
+      }
+    }
+  }
+  &.background-color {
     background-color: $brand-green;
     .container {
       .logo a {

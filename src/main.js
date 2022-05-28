@@ -1,16 +1,19 @@
-// Background header variables
+// Elements
+const body = document.querySelector("body");
 const header = document.querySelector("#header");
-const headerHeight = header.offsetHeight;
+const navMenu = document.querySelector("#header #nav");
+const containerMenu = document.querySelector("#header .menu-btn");
+const buttonMenu = document.querySelectorAll("#header .menu-btn img");
 
 // Menu variables
-const buttonMenu = document.querySelectorAll("#header .menu-btn img");
-const containerMenu = document.querySelector("#header .menu-btn");
 
+const headerHeight = header.offsetHeight;
 const openButton = buttonMenu[0];
 const closeButton = buttonMenu[1];
 
 // Background header
-window.addEventListener("scroll", () => {
+
+const scrollHeader = () => {
   if (window.scrollY > headerHeight) {
     header.classList.add("background");
     header.classList.add("shadow");
@@ -22,11 +25,18 @@ window.addEventListener("scroll", () => {
     openButton.setAttribute("src", `/src/assets/icons/green/open-menu.svg`);
     closeButton.setAttribute("src", `/src/assets/icons/green/close-menu.svg`);
   }
-});
+};
 
-// Menu
+// Menu toggle
+
 buttonMenu.forEach((img) => {
   img.addEventListener("click", () => {
     containerMenu.classList.toggle("show");
+    navMenu.classList.toggle("show");
+    body.classList.toggle("overflow");
   });
+});
+
+window.addEventListener("scroll", () => {
+  scrollHeader();
 });

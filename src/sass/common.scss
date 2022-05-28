@@ -13,6 +13,9 @@ body {
   font: 400 1.6rem $fontBody;
   background-color: $white;
   -webkit-font-smoothing: antialiased;
+  &.overflow {
+    overflow: hidden;
+  }
 }
 
 p {
