@@ -17,6 +17,11 @@ body {
 body.overflow {
   overflow: hidden;
 }
+@media (min-width: 1000px) {
+  body {
+    font: 400 1.8rem "DM Sans", sans-serif;
+  }
+}
 
 p {
   color: #484f56;
@@ -43,7 +48,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
   margin-inline: auto;
   padding-inline: 6%;
@@ -55,7 +60,7 @@ img {
 }
 
 .button {
-  padding: 1.7rem 3.2rem;
+  padding: 1.2rem 2.2rem;
   border-radius: 4rem;
   background-color: #00856f;
   border: none;
@@ -198,23 +203,79 @@ img {
 #header.background .container .logo a span {
   color: whitesmoke;
 }
-#header.background-color {
-  background-color: #00856f;
-}
-#header.background-color .container .logo a {
-  color: whitesmoke;
-}
-#header.background-color .container .logo a span {
-  color: whitesmoke;
+@media (min-width: 941px) {
+  #header .container #nav {
+    width: 65%;
+    height: 100%;
+    background-color: transparent;
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transform: none;
+  }
+  #header .container #nav .menu {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 0;
+  }
+  #header .container #nav .menu li a {
+    font-size: 1.7rem;
+    color: #00856f;
+    position: relative;
+  }
+  #header .container #nav .menu li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0.2rem;
+    background-color: #00856f;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: -2.5rem;
+    transition: all 0.3s;
+  }
+  #header .container #nav .menu li a:hover::after {
+    width: 100%;
+  }
+  #header .container #nav .button {
+    background-color: transparent;
+    border: 1px solid;
+    transition: all 0.3s;
+    margin: 0;
+  }
+  #header .container #nav .button:hover {
+    background-color: #00856f;
+    color: whitesmoke;
+  }
+  #header .container #nav .social-media {
+    display: none;
+  }
+  #header .container .menu-btn {
+    display: none;
+  }
+  #header.background .container #nav .menu li a {
+    color: whitesmoke;
+  }
+  #header.background .container #nav .menu li a::after {
+    background-color: whitesmoke;
+  }
+  #header.background .container #nav .button {
+    color: whitesmoke;
+  }
+  #header.background .container #nav .button:hover {
+    background-color: whitesmoke;
+    color: #00856f;
+  }
 }
 
 #main .section .section1 {
   position: relative;
 }
-#main .section .section1 h1.title {
+#main .section .section1 .welcome h1.title {
   font-size: 3.4rem;
 }
-#main .section .section1 p {
+#main .section .section1 .welcome p {
   font-size: 1.8rem;
 }
 #main .section .section1 .mulher-sorrindo {
@@ -248,6 +309,30 @@ img {
   left: 0;
   z-index: -1;
 }
+@media (min-width: 941px) {
+  #main .section .section1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #main .section .section1 .welcome {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 0.5rem;
+  }
+  #main .section .section1 .welcome .title {
+    margin-bottom: 0;
+  }
+  #main .section .section1 .stats {
+    width: 100%;
+    max-width: 90%;
+    display: flex;
+  }
+}
+#main .section .section2 {
+  padding-bottom: 10rem;
+}
 #main .section .section2 .cards__services {
   width: 100%;
   height: 100%;
@@ -275,46 +360,116 @@ img {
   padding-bottom: 4rem;
   text-align: left;
 }
-#main .section .section3 p {
+#main .section .section3 .content p {
   margin-bottom: 4rem;
 }
 #main .section .section3 img {
-  max-width: 32.7rem;
+  max-width: 35.7rem;
   display: block;
+}
+@media (min-width: 900px) {
+  #main .section .section3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6.7rem;
+    padding-bottom: 10rem;
+  }
+  #main .section .section3 .content {
+    flex: 6;
+  }
+  #main .section .section3 .content .title {
+    margin-bottom: 2rem;
+  }
+  #main .section .section3 .content p {
+    margin-bottom: 0;
+  }
+  #main .section .section3 img {
+    flex: 4;
+    order: -1;
+    width: 50%;
+    max-width: 48rem;
+  }
 }
 #main .section .section4 {
   padding-bottom: 10rem;
 }
 #main .section .section4 .content {
-  gap: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 32.7rem;
+  margin-inline: auto;
+}
+#main .section .section4 .content .button {
+  margin-bottom: 4rem;
 }
 #main .section .section4 .content address,
 #main .section .section4 .content .mail {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 3rem;
 }
-#main .section .section4 .content img {
-  max-width: 32.7rem;
+#main .section .section4 img {
+  max-width: 35.7rem;
   display: block;
+}
+@media (min-width: 800px) {
+  #main .section .section4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+  }
+  #main .section .section4 .content {
+    max-width: 40.5rem;
+  }
+  #main .section .section4 .content .title {
+    text-align: left;
+  }
+  #main .section .section4 .content address,
+#main .section .section4 .content .mail {
+    margin-inline: 0;
+  }
+  #main .section .section4 .content .button {
+    margin-inline: 0;
+  }
+  #main .section .section4 img.man-smile {
+    width: 50%;
+    max-width: 57.5rem;
+  }
 }
 
 #footer {
   background-color: #00856f;
   padding-block: 6rem;
 }
-#footer .container .logo a {
+#footer .container .copyright .logo a {
   color: whitesmoke;
   font-size: 3.6rem;
 }
-#footer .container .logo a span {
+#footer .container .copyright .logo a span {
   font-weight: 700;
 }
-#footer .container p {
+#footer .container .copyright p {
   color: whitesmoke;
 }
 #footer .container .social-media {
   display: flex;
+}
+#footer .container .social-media li a img {
+  transition: 0.3s;
+}
+#footer .container .social-media li a img:hover {
+  transform: translateY(-0.5rem);
+}
+@media (min-width: 768px) {
+  #footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

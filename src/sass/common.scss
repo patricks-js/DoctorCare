@@ -16,6 +16,9 @@ body {
   &.overflow {
     overflow: hidden;
   }
+  @media (min-width: 1000px) {
+    font: 400 1.8rem $fontBody;
+  }
 }
 
 p {
@@ -43,7 +46,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
   margin-inline: auto;
   padding-inline: 6%;
@@ -55,7 +58,7 @@ img {
 }
 
 .button {
-  padding: 1.7rem 3.2rem;
+  padding: 1.2rem 2.2rem;
   border-radius: 4rem;
   background-color: $brand-green;
   border: none;

@@ -4,6 +4,7 @@ const header = document.querySelector("#header");
 const navMenu = document.querySelector("#header #nav");
 const containerMenu = document.querySelector("#header .menu-btn");
 const buttonMenu = document.querySelectorAll("#header .menu-btn img");
+const linksMenu = document.querySelectorAll("#header .menu li a");
 
 // Menu variables
 
@@ -36,6 +37,19 @@ buttonMenu.forEach((img) => {
     body.classList.toggle("overflow");
   });
 });
+
+// Close menu on click
+
+const linksHeader = document.querySelectorAll("#header .menu a");
+linksHeader.forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    containerMenu.classList.remove("show");
+    body.classList.remove("overflow");
+  });
+});
+
+// Scroll effects
 
 window.addEventListener("scroll", () => {
   scrollHeader();

@@ -101,13 +101,80 @@
       }
     }
   }
-  &.background-color {
-    background-color: $brand-green;
+  @media (min-width: 941px) {
     .container {
-      .logo a {
-        color: $white;
-        span {
-          color: $white;
+      #nav {
+        width: 65%;
+        height: 100%;
+        background-color: transparent;
+
+        position: static;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        transform: none;
+
+        .menu {
+          display: flex;
+          gap: 2.5rem;
+          margin-top: 0;
+          li a {
+            font-size: 1.7rem;
+            color: $brand-green;
+            position: relative;
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 0.2rem;
+              background-color: $brand-green;
+              border-radius: 0.5rem;
+
+              position: absolute;
+              bottom: -2.5rem;
+
+              transition: all 0.3s;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+          }
+        }
+        .button {
+          background-color: transparent;
+          border: 1px solid;
+          transition: all 0.3s;
+          margin: 0;
+          &:hover {
+            background-color: $brand-green;
+            color: $white;
+          }
+        }
+        .social-media {
+          display: none;
+        }
+      }
+      .menu-btn {
+        display: none;
+      }
+    }
+    &.background {
+      .container {
+        #nav {
+          .menu li a {
+            color: $white;
+            &::after {
+              background-color: $white;
+            }
+          }
+          .button {
+            color: $white;
+            &:hover {
+              background-color: $white;
+              color: $brand-green;
+            }
+          }
         }
       }
     }
@@ -118,11 +185,13 @@
   .section {
     .section1 {
       position: relative;
-      h1.title {
-        font-size: 3.4rem;
-      }
-      p {
-        font-size: 1.8rem;
+      .welcome {
+        h1.title {
+          font-size: 3.4rem;
+        }
+        p {
+          font-size: 1.8rem;
+        }
       }
       .mulher-sorrindo {
         max-width: 26.4rem;
@@ -160,8 +229,28 @@
         left: 0;
         z-index: -1;
       }
+      @media (min-width: 941px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .welcome {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          gap: 0.5rem;
+          .title {
+            margin-bottom: 0;
+          }
+        }
+        .stats {
+          width: 100%;
+          max-width: 90%;
+          display: flex;
+        }
+      }
     }
     .section2 {
+      padding-bottom: 10rem;
       .cards__services {
         width: 100%;
         height: 100%;
@@ -192,27 +281,83 @@
       background-color: $brand-beige;
       padding-bottom: 4rem;
       text-align: left;
-      p {
-        margin-bottom: 4rem;
+      .content {
+        p {
+          margin-bottom: 4rem;
+        }
       }
       img {
-        max-width: 32.7rem;
+        max-width: 35.7rem;
         display: block;
+      }
+      @media (min-width: 900px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6.7rem;
+        padding-bottom: 10rem;
+        .content {
+          flex: 6;
+          .title {
+            margin-bottom: 2rem;
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+        img {
+          flex: 4;
+          order: -1;
+          width: 50%;
+          max-width: 48rem;
+        }
       }
     }
     .section4 {
       padding-bottom: 10rem;
       .content {
-        gap: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 32.7rem;
+        margin-inline: auto;
+        .button {
+          margin-bottom: 4rem;
+        }
         address,
         .mail {
           display: flex;
           align-items: center;
           gap: 1rem;
+
+          margin-bottom: 3rem;
         }
-        img {
-          max-width: 32.7rem;
-          display: block;
+      }
+      img {
+        max-width: 35.7rem;
+        display: block;
+      }
+      @media (min-width: 800px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3rem;
+        .content {
+          max-width: 40.5rem;
+          .title {
+            text-align: left;
+          }
+          address,
+          .mail {
+            margin-inline: 0;
+          }
+          .button {
+            margin-inline: 0;
+          }
+        }
+        img.man-smile {
+          width: 50%;
+          max-width: 57.5rem;
         }
       }
     }
@@ -223,18 +368,31 @@
   background-color: $brand-green;
   padding-block: 6rem;
   .container {
-    .logo a {
-      color: $white;
-      font-size: 3.6rem;
-      span {
-        font-weight: 700;
+    .copyright {
+      .logo a {
+        color: $white;
+        font-size: 3.6rem;
+        span {
+          font-weight: 700;
+        }
       }
-    }
-    p {
-      color: $white;
+      p {
+        color: $white;
+      }
     }
     .social-media {
       display: flex;
+      li a img {
+        transition: 0.3s;
+        &:hover {
+          transform: translateY(-0.5rem);
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
