@@ -1,9 +1,9 @@
 // primary colors
 $hue: 170;
 $brand-green: hsl($hue, 100%, 26.1%);
-$brand-green-light: hsl(147.7, 22.8%, 88.8%);
+$brand-green-light: hsl(calc($hue - 22.3), 22.8%, 88.8%);
 $brand-green-light-02: hsl($hue, 14.3%, 97.3%);
-$brand-beige: hsl(38.6, 100%, 97.3%);
+$brand-beige: hsl(calc($hue - 113.4), 100%, 97.3%);
 $brand-green-hover: hsl($hue, 100%, 13.5%);
 
 // secondary colors

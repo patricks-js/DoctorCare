@@ -110,7 +110,6 @@ img {
 #header {
   width: 100%;
   height: 7.2rem;
-  transition: background 0.3s;
   position: fixed;
   top: 0;
   left: 0;
@@ -121,6 +120,7 @@ img {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  transition: all 0.3s;
 }
 #header .container .logo a {
   color: #000000;
@@ -178,20 +178,26 @@ img {
 #header .container .menu-btn .close {
   position: absolute;
   right: 0;
-  transform: translateY(-5rem);
+  display: block;
+  transform: translateY(-10rem);
   transition: all 0.3s;
+}
+#header .container .menu-btn .close svg path {
+  stroke: #00856f;
 }
 #header .container .menu-btn .open {
   visibility: visible;
   opacity: 1;
   transition: all 0.3s;
 }
+#header .container .menu-btn .open svg path {
+  stroke: #00856f;
+}
 #header .container .menu-btn.show .close {
-  transform: translateY(0);
+  transform: translateY(-4rem);
 }
 #header .container .menu-btn.show .open {
-  visibility: hidden;
-  opacity: 0;
+  transform: translateX(10rem);
 }
 #header.background .container {
   background-color: #00856f;
@@ -201,6 +207,12 @@ img {
 }
 #header.background .container .logo a span {
   color: whitesmoke;
+}
+#header.background .container .menu-btn .open svg path {
+  stroke: whitesmoke;
+}
+#header.background .container .menu-btn .close svg path {
+  stroke: whitesmoke;
 }
 @media (min-width: 941px) {
   #header .container #nav {
@@ -289,7 +301,7 @@ img {
 #main .section .section1 .stats {
   width: 100%;
   max-width: 37rem;
-  background-color: #fffaf1;
+  background-color: #fffef1;
   padding-block: 4rem;
   display: grid;
   gap: 6rem;
@@ -387,12 +399,18 @@ img {
   text-align: left;
   padding: 2.4rem;
 }
+#main .section .section2 .cards__services .service .checked circle {
+  fill: #dce9e2;
+}
+#main .section .section2 .cards__services .service .checked path {
+  stroke: #00856f;
+}
 #main .section .section2 .cards__services .service .service__title {
   font-size: 2.4rem;
   font-weight: 700;
 }
 #main .section .section3 {
-  background-color: #fffaf1;
+  background-color: #fffef1;
   padding-bottom: 4rem;
   text-align: left;
 }
@@ -446,6 +464,10 @@ img {
   align-items: center;
   gap: 1rem;
   margin-bottom: 3rem;
+}
+#main .section .section4 .content address path,
+#main .section .section4 .content .mail path {
+  stroke: #00856f;
 }
 #main .section .section4 img {
   max-width: 35.7rem;

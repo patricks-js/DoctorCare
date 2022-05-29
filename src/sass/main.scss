@@ -1,7 +1,6 @@
 #header {
   width: 100%;
   height: $header-height;
-  transition: background 0.3s;
 
   position: fixed;
   top: 0;
@@ -12,6 +11,8 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    transition: all 0.3s;
+
     .logo a {
       color: #000000;
       font-size: 2.4rem;
@@ -70,21 +71,27 @@
       .close {
         position: absolute;
         right: 0;
-        transform: translateY(-5rem);
+        display: block;
+        transform: translateY(-10rem);
         transition: all 0.3s;
+        svg path {
+          stroke: $brand-green;
+        }
       }
       .open {
         visibility: visible;
         opacity: 1;
         transition: all 0.3s;
+        svg path {
+          stroke: $brand-green;
+        }
       }
       &.show {
         .close {
-          transform: translateY(0);
+          transform: translateY(-4rem);
         }
         .open {
-          visibility: hidden;
-          opacity: 0;
+          transform: translateX(10rem);
         }
       }
     }
@@ -96,6 +103,18 @@
         color: $white;
         span {
           color: $white;
+        }
+      }
+      .menu-btn {
+        .open {
+          svg path {
+            stroke: $white;
+          }
+        }
+        .close {
+          svg path {
+            stroke: $white;
+          }
         }
       }
     }
@@ -308,7 +327,14 @@
           text-align: left;
 
           padding: 2.4rem;
-
+          .checked {
+            circle {
+              fill: $brand-green-light;
+            }
+            path {
+              stroke: $brand-green;
+            }
+          }
           .service__title {
             font-size: 2.4rem;
             font-weight: 700;
@@ -370,6 +396,9 @@
           gap: 1rem;
 
           margin-bottom: 3rem;
+          path {
+            stroke: $brand-green;
+          }
         }
       }
       img {
