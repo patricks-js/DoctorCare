@@ -154,7 +154,8 @@
 
               transition: all 0.3s;
             }
-            &:hover::after {
+            &:hover::after,
+            &.active::after {
               width: 100%;
             }
           }
