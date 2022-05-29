@@ -5,6 +5,7 @@ const navMenu = document.querySelector("#header #nav");
 const containerMenu = document.querySelector("#header .menu-btn");
 const buttonMenu = document.querySelectorAll("#header .menu-btn .icon");
 const linksMenu = document.querySelectorAll("#header .menu li a");
+const sections = document.querySelectorAll(".section");
 
 // Menu variables
 
@@ -18,13 +19,9 @@ const scrollHeader = () => {
   if (window.scrollY > headerHeight) {
     header.classList.add("background");
     header.classList.add("shadow");
-    // openButton.setAttribute("src", `/src/assets/icons/light/open-menu.svg`);
-    // closeButton.setAttribute("src", `/src/assets/icons/light/close-menu.svg`);
   } else {
     header.classList.remove("background");
     header.classList.remove("shadow");
-    // openButton.setAttribute("src", `/src/assets/icons/green/open-menu.svg`);
-    // closeButton.setAttribute("src", `/src/assets/icons/green/close-menu.svg`);
   }
 };
 
@@ -51,6 +48,48 @@ linksHeader.forEach((link) => {
 
 // Scroll effects
 
+const activateLinkMenu = () => {
+  const windowScroll = scrollY;
+  let heightSections = [
+    sections[0].offsetHeight,
+    sections[1].offsetHeight,
+    sections[2].offsetHeight,
+    sections[3].offsetHeight,
+  ];
+  const checkpoint = 1.3;
+
+  const interSection1e2 = heightSections[0] / checkpoint;
+  const interSection2e3 = heightSections[0] + heightSections[1] / checkpoint;
+  const interSection3e4 =
+    heightSections[0] + heightSections[1] + heightSections[3] / checkpoint;
+
+  linksMenu[0].classList.add("active");
+  linksMenu[1].classList.remove("active");
+  linksMenu[2].classList.remove("active");
+  linksMenu[3].classList.remove("active");
+
+  if (windowScroll >= interSection1e2) {
+    linksMenu[0].classList.remove("active");
+    linksMenu[1].classList.add("active");
+    linksMenu[2].classList.remove("active");
+    linksMenu[3].classList.remove("active");
+  }
+  if (windowScroll >= interSection2e3) {
+    linksMenu[0].classList.remove("active");
+    linksMenu[1].classList.remove("active");
+    linksMenu[2].classList.add("active");
+    linksMenu[3].classList.remove("active");
+  }
+  if (windowScroll >= interSection3e4) {
+    linksMenu[0].classList.remove("active");
+    linksMenu[1].classList.remove("active");
+    linksMenu[2].classList.remove("active");
+    linksMenu[3].classList.add("active");
+  }
+};
+
+// Scroll Reveal
+
 ScrollReveal({
   reset: true,
 }).reveal(".section1", { delay: 300 });
@@ -75,4 +114,5 @@ ScrollReveal({
 
 window.addEventListener("scroll", () => {
   scrollHeader();
+  activateLinkMenu();
 });
